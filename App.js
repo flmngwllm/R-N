@@ -12,6 +12,9 @@ import PlaceInput from './src/components/PlaceInput'
 import List from './src/components/List'
 import placeImage from './src/assets/IMG_81411.jpg'
 import PlaceDetail from './src/components/PlaceDetail'
+
+
+
 export default class App extends Component {
   state = {
      places:[],
@@ -45,6 +48,23 @@ export default class App extends Component {
   //   })
   // }
 
+placeDeleteHandler = ()=>{
+  this.setState(prevState =>{
+        return{
+          places: prevState.places.filter(place => {
+            return place.key !== prevState.selectPlace.key
+          }),
+          selectPlace: null
+        }
+      })
+}
+
+modalCloseHandler = () => {
+this.setState({
+  selectPlace: null
+})
+}
+
 
   placeSelectHandler = key => {
     this.setState(prevState =>{
@@ -60,7 +80,11 @@ export default class App extends Component {
       
       return (
         <View style={styles.container}>
-        <PlaceDetail selectPlace={this.state.selectPlace}/>
+
+        <PlaceDetail selectPlace={this.state.selectPlace} 
+        onDelete={this.placeDeleteHandler} 
+        onModalClose={this.modalCloseHandler}/>
+
        <PlaceInput onPlaceAdded={this.placeAddedHandler}/>
          <List 
          places={this.state.places} 
