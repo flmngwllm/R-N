@@ -11,10 +11,11 @@ import {Platform, StyleSheet, View} from 'react-native';
 import PlaceInput from './src/components/PlaceInput'
 import List from './src/components/List'
 import placeImage from './src/assets/IMG_81411.jpg'
-
+import PlaceDetail from './src/components/PlaceDetail'
 export default class App extends Component {
   state = {
-     places:[]
+     places:[],
+     selectPlace: null
 
    }
   
@@ -34,11 +35,22 @@ export default class App extends Component {
     })
   }
 
-  placeDeleteHandler = key => {
+  // placeDeleteHandler = key => {
+  //   this.setState(prevState =>{
+  //     return{
+  //       places: prevState.places.filter(place => {
+  //         return place.key !== key
+  //       })
+  //     }
+  //   })
+  // }
+
+
+  placeSelectHandler = key => {
     this.setState(prevState =>{
       return{
-        places: prevState.places.filter(place => {
-          return place.key !== key
+        selectPlace: prevState.places.find(place => {
+          return place.key === key
         })
       }
     })
@@ -48,10 +60,12 @@ export default class App extends Component {
       
       return (
         <View style={styles.container}>
+        <PlaceDetail selectPlace={this.state.selectPlace}/>
        <PlaceInput onPlaceAdded={this.placeAddedHandler}/>
          <List 
          places={this.state.places} 
-         onDelete = {this.placeDeleteHandler}/>
+        //  onDelete = {this.placeDeleteHandler}/>
+        onSelect = {this.placeSelectHandler}/>
         </View>
       );
     }
