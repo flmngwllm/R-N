@@ -48,6 +48,7 @@ export default class App extends Component {
   //   })
   // }
 
+  //function for deleting
 placeDeleteHandler = ()=>{
   this.setState(prevState =>{
         return{
@@ -59,6 +60,7 @@ placeDeleteHandler = ()=>{
       })
 }
 
+//function for closing modal
 modalCloseHandler = () => {
 this.setState({
   selectPlace: null

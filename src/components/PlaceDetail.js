@@ -14,10 +14,11 @@ const placeDetail = props => {
     }
 
     return(
+        //Request close is specifically for android
 <Modal onRequestClose={props.onModalClose} 
 visible={props.selectPlace !== null}
  animationType ="slide">
- 
+
     <View style ={styles.modalContainer}>
         {modalContent}
         <View>
