@@ -12,30 +12,15 @@ import PlaceInput from './src/components/PlaceInput'
 import List from './src/components/List'
 import placeImage from './src/assets/IMG_81411.jpg'
 import PlaceDetail from './src/components/PlaceDetail'
+import {connect} from 'react-redux'
+import {addPlace, deletePlace, selectPlace, deselectPlace} from './src/store/actions/index'
 
 
-
-export default class App extends Component {
-  state = {
-     places:[],
-     selectPlace: null
-
-   }
+ class App extends Component {
   
 
-
-
   placeAddedHandler = placeName =>{
-    
-    this.setState(prevState => {
-      return{
-        places: prevState.places.concat({
-          key: Math.random(), 
-          name: placeName,
-          image: placeImage
-        })
-      }
-    })
+    this.props.onAddPlace(placeName)
   }
 
   // placeDeleteHandler = key => {
@@ -50,32 +35,17 @@ export default class App extends Component {
 
   //function for deleting
 placeDeleteHandler = ()=>{
-  this.setState(prevState =>{
-        return{
-          places: prevState.places.filter(place => {
-            return place.key !== prevState.selectPlace.key
-          }),
-          selectPlace: null
-        }
-      })
+  this.props.onDeletePlace();
 }
 
 //function for closing modal
 modalCloseHandler = () => {
-this.setState({
-  selectPlace: null
-})
+this.props.onDeselectPlace()
 }
 
 
   placeSelectHandler = key => {
-    this.setState(prevState =>{
-      return{
-        selectPlace: prevState.places.find(place => {
-          return place.key === key
-        })
-      }
-    })
+   this.props.onSelectPlace(key)
   }
   
     render() {
@@ -83,13 +53,14 @@ this.setState({
       return (
         <View style={styles.container}>
 
-        <PlaceDetail selectPlace={this.state.selectPlace} 
+        <PlaceDetail 
+        selectPlace={this.props.selectPlace} 
         onDelete={this.placeDeleteHandler} 
         onModalClose={this.modalCloseHandler}/>
 
        <PlaceInput onPlaceAdded={this.placeAddedHandler}/>
          <List 
-         places={this.state.places} 
+         places={this.props.places} 
         //  onDelete = {this.placeDeleteHandler}/>
         onSelect = {this.placeSelectHandler}/>
         </View>
@@ -109,3 +80,29 @@ const styles = StyleSheet.create({
   },
 
 });
+
+// receives the state
+const mapStateToProps = state => {
+  //return object to map keys to access props
+  return {
+    
+    //access slice of state from configureStore then another places call to reach out to places property in our state
+    places: state.places.places,
+    selectPlace: state.places.selectPlace
+  }
+}
+
+//
+const mapDispatchToProps = dispatch => {
+  return {
+    //dispatch an action
+    onAddPlace: (name) => dispatch(addPlace(name)),
+    onDeletePlace: () => dispatch(deletePlace()),
+    onSelectPlace: (key) => dispatch(selectPlace(key)),
+    onDeselectPlace: () => dispatch(deselectPlace())
+
+  }
+}
+
+//function to pass app to create connection from app compoent to redux store
+export default connect(mapStateToProps, mapDispatchToProps)(App)
