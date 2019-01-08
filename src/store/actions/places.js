@@ -4,6 +4,7 @@ export const addPlace = (placeName) => {
     return {
         type: ADD_PLACE,
         placeName: placeName
+
     };
 }
 

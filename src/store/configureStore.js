@@ -1,5 +1,5 @@
-import {createStore, combineReducers} from 'redux'
-import placesReducer from './reducers/root'
+import {createStore, combineReducers, compose} from 'redux'
+import placesReducer from './reducers/places'
 
 //combines multiple reducers into 1
 const rootReducer = combineReducers({
@@ -7,8 +7,15 @@ const rootReducer = combineReducers({
     places: placesReducer
 })
 
+let composeEnhancers = compose
+
+if (__DEV__){
+    composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+}
+
+
 const configureStore = () => {
-    return createStore(rootReducer);
+    return createStore(rootReducer, composeEnhancers());
 }
 
 export default configureStore;
