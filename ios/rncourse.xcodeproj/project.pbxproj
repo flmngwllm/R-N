@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -52,6 +53,7 @@
 		D443B69121E67670000BFF77 /* ios in Resources */ = {isa = PBXBuildFile; fileRef = D443B66921E6766F000BFF77 /* ios */; };
 		D443B69221E67739000BFF77 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D443025221E465E800F99AF6 /* libRNVectorIcons.a */; };
 		D443B6E921E6856A000BFF77 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25D5654E4E4D45A6824DFB98 /* Ionicons.ttf */; };
+		D455750B21EA80010040EF06 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D455750821EA7FD00040EF06 /* libReactNativeNavigation.a */; };
 		E81D659E96524473B757B10B /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7503ECBE37A247BB8C373376 /* Foundation.ttf */; };
 		F402FB38A404446AA53984B9 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D735405505304E239DAAA1DF /* AntDesign.ttf */; };
 /* End PBXBuildFile section */
@@ -344,6 +346,13 @@
 			remoteGlobalIDString = A39873CE1EA65EE60051E01A;
 			remoteInfo = "RNVectorIcons-tvOS";
 		};
+		D455750721EA7FD00040EF06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D45574DE21EA7FD00040EF06 /* ReactNativeNavigation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D8AFADBD1BEE6F3F00A4592D;
+			remoteInfo = ReactNativeNavigation;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -389,6 +398,7 @@
 		BFCB6C65BCFF416388321BCB /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		D443B66921E6766F000BFF77 /* ios */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ios; sourceTree = "<group>"; };
 		D443B69321E67801000BFF77 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		D45574DE21EA7FD00040EF06 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		D735405505304E239DAAA1DF /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		F66F4FAC646A42EC9A950FD5 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		F6DA38CF274245F1B1D6F15D /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
@@ -407,6 +417,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D455750B21EA80010040EF06 /* libReactNativeNavigation.a in Frameworks */,
 				D443B69221E67739000BFF77 /* libRNVectorIcons.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
@@ -594,6 +605,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				D45574DE21EA7FD00040EF06 /* ReactNativeNavigation.xcodeproj */,
 				D443B66921E6766F000BFF77 /* ios */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -671,6 +683,14 @@
 			children = (
 				D443025221E465E800F99AF6 /* libRNVectorIcons.a */,
 				D443025421E465E800F99AF6 /* libRNVectorIcons-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D45574DF21EA7FD00040EF06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D455750821EA7FD00040EF06 /* libReactNativeNavigation.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -858,6 +878,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = D45574DF21EA7FD00040EF06 /* Products */;
+					ProjectRef = D45574DE21EA7FD00040EF06 /* ReactNativeNavigation.xcodeproj */;
 				},
 				{
 					ProductGroup = D443024D21E465E800F99AF6 /* Products */;
@@ -1148,6 +1172,13 @@
 			remoteRef = D443025321E465E800F99AF6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		D455750821EA7FD00040EF06 /* libReactNativeNavigation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativeNavigation.a;
+			remoteRef = D455750721EA7FD00040EF06 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1375,6 +1406,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.rncourse2324;
 				PRODUCT_NAME = rncourse;
+				SYSTEM_HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-navigation/ios/**";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1402,6 +1434,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.rncourse2324;
 				PRODUCT_NAME = rncourse;
+				SYSTEM_HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-navigation/ios/**";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
