@@ -67,4 +67,4 @@ public class MainApplication extends NavigationApplication {
 		return getPackages();
 	}
 }
-}
+
