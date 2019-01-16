@@ -4,7 +4,7 @@ import SharePlaceScreen from './src/screens/SharePlace/SharePlace'
 import FindPlaceScreen from './src/screens/FindPlace/FIndPlace'
 import {Provider} from 'react-redux'
 import configureStore from './src/store/configureStore'
-
+import PlaceDetailScreen from './src/screens/PlaceDetail'
 
 
 
@@ -14,6 +14,8 @@ const store = configureStore()
 Navigation.registerComponent("places.AuthScreen", ()=> AuthScreen, store, Provider);
 Navigation.registerComponent("places.SharePlaceScreen", () => SharePlaceScreen, store, Provider)
 Navigation.registerComponent("places.FindPlaceScreen", () => FindPlaceScreen, store, Provider)
+Navigation.registerComponent("places.PlaceDetailScreen", () => PlaceDetailScreen)
+
 
 // Start a App for react 
 Navigation.startSingleScreenApp({
