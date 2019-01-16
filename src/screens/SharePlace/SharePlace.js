@@ -5,6 +5,16 @@ import {connect} from 'react-redux'
 import {addPlace } from '../../store/actions/index'
 
 class SharePlaceScreen extends Component {
+    constructor(props) {
+        super(props)
+        // executes when navigation occurs
+        this.props.navigator.setOnNavigatorEvent()
+    }
+
+    onNavigatorEvent =event => {
+        console.log(event);
+    }
+
     placeAddedHandler = placeName =>{
         this.props.onAddPlace(placeName)
     }
