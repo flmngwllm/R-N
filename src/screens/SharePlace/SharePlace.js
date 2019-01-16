@@ -8,11 +8,17 @@ class SharePlaceScreen extends Component {
     constructor(props) {
         super(props)
         // executes when navigation occurs
-        this.props.navigator.setOnNavigatorEvent()
+        this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent)
     }
-
-    onNavigatorEvent =event => {
-        console.log(event);
+//toggle the side drawer
+    onNavigatorEvent = event => {
+       if(event.type ==="NavBarButtonPress"){
+           if (event.id === "sideDrawerToggle"){
+               this.props.navigator.toggleDrawer({
+                   side: "left"
+               })
+           }
+       }
     }
 
     placeAddedHandler = placeName =>{

@@ -16,9 +16,11 @@ const startTabs = () => {
             title: "Find Place",
             icon: sources[0],
             navigatorButtons: {
-                leftButtons: [{
+                leftButtons: [
+                    {
                     icon: sources[2],
-                    title:"Menu"
+                    title:"Menu",
+                    id: "sideDrawerToggle"
                 }]
             }
             },
@@ -30,7 +32,9 @@ const startTabs = () => {
                 navigatorButtons: {
                     leftButtons: [{
                         icon: sources[2],
-                        title:"Menu"
+                        title:"Menu",
+                        id: "sideDrawerToggle"
+
                     }]
                 }
                 }
@@ -38,7 +42,8 @@ const startTabs = () => {
 
         drawer: {
             left: {
-                screen: "places.SideDrawer"
+                screen: "places.SideDrawer",
+                
             }
         }
     })
